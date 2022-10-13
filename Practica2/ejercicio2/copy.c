@@ -12,7 +12,8 @@ void copy(int fdo, int fdd)
 	char c[64];
 	int count;
 	/* Read file byte by byte */
-	while (count = read(&fdo, c, 64)) {
+	while (count = read(fdo, c, 64)) {
+		printf("ciao");
 		/* Print byte to stdout */
 		if (!write(fdd, c, count)){
 			close(fdo);close(fdd);
@@ -29,12 +30,9 @@ int main(int argc, char *argv[])
 {
 	int fdo, fdd;
 
-	if (argc!=2) {
-		fprintf(stderr,"Usage: %s <sourcefile_name>\n",argv[0]);
-		exit(1);
-	}
-	else if (argc!=3) {
-		fprintf(stderr,"Usage: %s <destfile_name>\n",argv[0]);
+
+	if (argc!=3) {
+		fprintf(stderr,"Usage: %s <source_filename> <destfile_name>\n",argv[0]);
 		exit(1);
 	}
 
