@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
 
 /*programa que crea dos hijos: uno no cambia de ejecutable y otro si */
 
